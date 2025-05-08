@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. zadatak (CSS)</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 30px;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        margin: 20px;
+        padding: 0px;
+    }
+
+    .container {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    div.card {
+        height: 400px;
+        border: 1px solid black;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #topBtn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: rgba(128, 128, 128, 0.445);
+
+        display: none;
+    }
+
+    .mobile-menu{
+        display: none;
+    }
+
+    @media screen and (min-width: 768px){
+        .card {
+            width: 400px;
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        .card{
+            width: 90vw;
+        }
+
+        .mobile-menu{
+            display: block;
+        }
+
+        #topBtn{
+            display: block;
+        }
+
+    }
+
+
+</style>
+<body id="top">
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#kart1">Kartica1</a></li>
+            <li><a href="#kart2">Kartica2</a></li>
+            <li><a href="#kart3">Kartica3</a></li>
+            <li><a href="#kart4">Kartica4</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div id="kart1"id="cart"  class="card">
+            Kartica 1
+        </div>
+        <div id="kart2" class="card">
+            Kartica 2
+        </div>
+        <div id="kart3" class="card">
+            Kartica 3
+        </div>
+        <div id="kart4" class="card">
+            Kartica 4
+        </div>
+    </div>
+
+    <a id="topBtn" href="#top">Povratak na vrh</a>
+
+</body>
+

@@ -1,0 +1,78 @@
+
+
+body{
+    background-color: blue;
+    
+}
+
+.container{
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    width: 350px;
+    margin: 0px;
+    padding: 25px;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+
+}
+
+.header{
+    display: flex;
+
+}
+
+h2 {
+    font-size: 24px;
+    margin: 0px 10px;
+    align-self: center;
+    color: blue;
+}
+
+a {
+    color: blue;
+}
+
+p , a{
+    font-size: 16px;
+}
+.header img {
+    font-size: 24px;
+}
+
+.footer{
+    display: flex;
+    gap: 5px;
+}
+
+button {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+#btnAccept {
+    background-color: lightskyblue;
+    color: white;
+}
+
+#btnReject {
+    background-color: transparent;
+    color: blue;
+    border: 2px solid blue;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+#btnAccept:hover , #btnReject:hover{
+    background-color: blue;
+    color: white;
+}
+
+.noDisplay{
+    display: none;
+}

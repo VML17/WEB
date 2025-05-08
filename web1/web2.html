@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.container{
+            display: grid;
+            gap: 10px;
+            padding: 10px;
+        }
+        .box{
+            border: 1px solid red;
+            padding: 10px;
+        }
+        .header{
+            grid-area: header;
+        }
+        .side1{
+            grid-area: side1;
+        }
+        .main{
+            grid-area: main;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .side2{
+            grid-area: side2;
+        }
+        .footer{
+            grid-area: footer;
+        }
+        h1{
+            border: 1px solid blue;
+        }
+
+        @media all and (max-width: 600px) {
+            .container{
+                grid-template-areas:    'header'
+                                        'main'
+                                        'side1'
+                                        'side2'
+                                        'side3'
+                                        'footer';
+            }
+        }
+        @media all and (min-width: 600px) {
+            .container{
+                grid-template-columns: 1fr 2fr 1.5fr;
+                grid-template-areas:    'header header header'
+                                        'side1 main side2'
+                                        'side1 main side3'
+                                        'footer footer footer';
+            }
+        }
+
+        @media screen {
+            
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="box header">
+            <h1>header</h1>
+        </div>
+        <div class="box side1" >
+            <h1>side1</h1>
+        </div>
+        <div class="box main">
+            <h1>main</h1>
+        </div>
+        <div class="box side2">
+            <h1>side2</h1>
+        </div>
+        <div class="box side3">
+            <h1>side3</h1>
+        </div>
+        <div class="box footer">
+            <h1>footer</h1>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

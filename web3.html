@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1 {
+            grid-area: d1;
+            background-color: blue;
+            height: 100%; /* Ensure it fills its grid area */
+        }
+        .div2 {
+            grid-area: d2;
+            background-color: rgb(3, 255, 3);
+            height: 100%; /* Ensure it fills its grid area */
+        }
+        .div3 {
+            grid-area: d3;
+            background-color: rgb(255, 3, 3);
+            height: 100%; /* Ensure it fills its grid area */
+        }
+        .container {
+            display: grid;
+            border: 1px solid black;
+            height: 100vh;
+            grid-template-areas: 
+                'd1 d2'
+                'd3 d2'; /* Green spans both rows */
+            grid-template-rows: 30vh 50vh; /* Blue box 30vh, Red box 50vh */
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+        }
+        .div2 {
+            grid-row: 1 / 3; /* Span both rows */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+    </div>
+</body>
+</html>
+
