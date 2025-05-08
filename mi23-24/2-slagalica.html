@@ -1,3 +1,150 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>2. Slagalica</title>
+    </head>
+    <style>
+        /* sav CSS kod ovdje */
+        .hidden {
+            display: none;
+        }
+
+        body {
+            height: 100vh;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #counter{
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            padding: 30px 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: lightskyblue;
+            font-size: 4em;
+        }
+        .game-container{
+            display: grid;
+            width: 60vw;
+            height: 60vh;
+            grid-template-columns: auto auto auto;
+            gap: 10px;
+        }
+        .game-container div {
+            background-color: lightskyblue;
+            text-align: center;
+            align-content: center;
+            font-size: 4.5em;
+        }
+
+        .game-container div:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        #msgGameOver {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .game-container div.active{
+            background-color: lightyellow;
+            border: 2px solid gray;
+        }
+
+    </style>
+    <body>
+        <div id="counter">0</div>
+        <div class="game-container">
+            <div class="tile">9</div>
+            <div class="tile">4</div>
+            <div class="tile">6</div>
+
+            <div class="tile">2</div>
+            <div class="tile">1</div>
+            <div class="tile">3</div>
+
+            <div class="tile">5</div>
+            <div class="tile">7</div>
+            <div class="tile">8</div>
+        </div>
+        <h1 id="msgGameOver" class="hidden">Game over!</h1>
+    </body>
+    <script>
+        let active = null;
+        const counter = document.getElementById("counter");
+        const endMsg = document.getElementById("msgGameOver");
+        const gameContainer = document.querySelector(".game-container");   
+        
+        let i = 1;
+        [...gameContainer.children].forEach((btn) => {
+            btn.setAttribute('gridNo', `${i}`);
+            i++;
+        });
+        
+        function isOk(btn){
+            if(btn.innerHTML == btn.getAttribute("gridNo")){
+                btn.style.backgroundColor = "transparent";
+                btn.removeEventListener("click", handler);
+            }
+            if(active.innerHTML == active.getAttribute("gridNo")){
+                active.style.backgroundColor = "transparent";
+                active.removeEventListener("click", handler);
+            }
+        }
+        
+        function checkFinish(){
+            let i=0;
+            [...gameContainer.children].forEach(btn => {
+                // console.log("no " + btn.getAttribute("gridNo"));
+                // console.log("val " + btn.innerHTML);
+                if(btn.innerHTML != btn.getAttribute("gridNo")){
+                    i++;
+                }
+            })
+            if(i === 0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        function handler(event){
+            let btn = event.target;
+            if(active == null){
+                btn.classList.add("active");
+                active = btn;
+            }else{
+                active.classList.remove("active");
+                [active.textContent, btn.textContent] = [btn.textContent, active.textContent];
+                isOk(btn);
+                active=null;
+                counter.innerHTML = +counter.textContent + 1;
+
+                if(checkFinish()){
+                    gameContainer.style.display = "none";
+                    endMsg.classList.remove("hidden");
+                }
+            }
+            // console.log(btn)
+        }
+
+        gameContainer.childNodes.forEach( (btn) => btn.addEventListener("click", handler));
+
+    </script>
+</html> -->
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -141,3 +288,6 @@
 
     </script>
 </html>
+
+
+
