@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>2. Slagalica</title>
+    </head>
+    <style>
+        /* sav CSS kod ovdje */
+        *{
+            box-sizing: border-box;
+        }
+        
+        #counter{
+            font-size: 4em;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: lightskyblue;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            position: relative;
+        }
+        
+        .game-container{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 10px;
+            width: 60vw;
+            height: 60vw;
+            
+        }
+        
+        .tile {
+            background-color: lightskyblue;
+            align-content: center;
+            text-align: center;
+            font-size: 4.5em;
+        }
+        
+        .tile:hover {
+            cursor: pointer;
+            opacity: 0.5;
+        }
+        
+        .active {
+            background-color: lightyellow;
+            border: 2px solid gray;
+        }
+        
+        .fixed {
+            background-color: unset;
+        }
+        
+        .fixed:hover{
+            cursor: default;
+            opacity: 1;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+
+
+    </style>
+    <body>
+        <div id="counter">0</div>
+        <div class="game-container">
+            <div class="tile">9</div>
+            <div class="tile">4</div>
+            <div class="tile">6</div>
+
+            <div class="tile">2</div>
+            <div class="tile">1</div>
+            <div class="tile">3</div>
+
+            <div class="tile">5</div>
+            <div class="tile">7</div>
+            <div class="tile">8</div>
+        </div>
+        <h1 id="msgGameOver" class="hidden">Game over!</h1>
+    </body>
+    <script>
+        /* sav JS kod ovdje */
+
+        const tiles = document.querySelectorAll(".tile");
+        const counter = document.getElementById("counter");
+        
+        let active = null;
+        
+        console.log(tiles)
+        
+        
+        function isGameOver(){
+            let gameOver = true;;
+            for (let i=0; i<tiles.length; i++){
+                if(i+1 == tiles[i].textContent){
+                    tiles[i].classList.add("fixed")
+                }else{
+                    gameOver = false;
+                }
+            }
+            
+            if (gameOver == true){
+                const gameOver = document.getElementById("msgGameOver");
+                const gameContainer = document.querySelector(".game-container");
+                gameContainer.classList.add("hidden");
+                gameOver.classList.remove("hidden");
+
+            }
+        }
+
+
+        tiles.forEach(tile => tile.addEventListener("click", () => {
+            if(tile.classList.contains("fixed")){
+                return;
+            }else if (active == null){
+                tile.classList.add("active");
+                active = tile;
+            }else{
+                active.classList.remove("active");
+                [tile.textContent, active.textContent] = [active.textContent, tile.textContent];
+                active = null;
+                counter.textContent = +counter.textContent + 1;
+
+                isGameOver();
+            }
+        }))
+
+    </script>
+</html>
