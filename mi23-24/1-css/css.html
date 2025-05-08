@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>1. CSS</title>
+        <style>
+            @font-face {
+                font-family: roboFont;
+                src: url(Roboto-Regular.ttf);
+            }
+            *{
+                font-family: roboFont;
+                box-sizing: border-box;
+            }
+
+            .card{
+                width: 400px;
+                background-color: seashell;
+                border-radius: 10px;
+                padding: 20px;
+            }
+            .card-header{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+            .card-avatar{
+                width: 50%;
+                /* padding: 15px; */
+            }
+            .card-avatar img{
+                width: 100%;
+            }
+            .card-info{
+                width: 50%;;
+                padding-left: 15px;
+                
+            }
+
+            .card-close{
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                border-radius: 50%;
+                font-size: large;
+                background-color: lightskyblue;
+                border: 1px solid black;
+            }
+
+            .card-info > div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px 0px;
+            }
+
+            .card-info > div img {
+                height: 2em;
+            }
+
+            .card-footer div{
+                text-align: center;
+                font-size: 1.1em;
+                padding: 5px;
+            }
+            .card-footer div:first-child {
+                font-size: 2.2em;
+            }
+
+            .card-actions {
+                padding: 20px;
+                display: flex;
+                gap: 4px;
+                justify-content: center;
+            }
+            .card-actions button {
+                background-color: lightskyblue;
+                border: 2px solid black;
+                border-radius: 5px;
+                padding: 10px 15px;
+            }
+
+        </style>
+    </head>
+
+    <body style="background-color: darkgrey">
+        <div class="card">
+            <button class="card-close">X</button>
+            <div class="card-header">
+                <div class="card-avatar">
+                    <img src="avatar.png" alt="Mock avatar" />
+                </div>
+                <div class="card-info">
+                    <div>
+                        <div>
+                            <img src="education.png" alt="Education" />
+                        </div>
+                        <div>MSc</div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="pin.png" alt="Location" />
+                        </div>
+                        <div>Zagreb, Croatia</div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="online.png" alt="Online" />
+                        </div>
+                        <div>Online</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div>Ivana Ivić</div>
+                <div>Web developer</div>
+            </div>
+            <div class="card-actions">
+                <button>Add friend</button>
+                <button>Send mail</button>
+            </div>
+        </div>
+    </body>
+</html>
