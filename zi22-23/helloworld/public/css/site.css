@@ -21,9 +21,43 @@
     background-color: lightgray;
     justify-content: center;
 }
+
+ol {
+    padding: 10px 20px;
+}
+li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .reminder{
     display: flex;
     justify-content: space-between;
+}
+.reminder > div {
+    display: flex;
+    align-items: top;
+    gap: 30px;
+}
+
+.indexMsg p {
+    margin: 0;
+}
+
+.dateX {
+    vertical-align: top;
+}
+
+#date {
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 100%;
+    margin: 0;
+}
+
+.dateX button{
+    font-size: 1.5rem;
 }
 
 footer{

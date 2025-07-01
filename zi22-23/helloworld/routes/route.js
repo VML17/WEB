@@ -26,7 +26,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/add', (req, res) => {
-    const newReminder = {msg: req.body.textInput, date: new Date().toISOString().split('T')[0]};
+    const today = new Date();
+    const newReminder = {msg: req.body.textInput, date: today.toLocaleDateString('hr-HR')};
     // index = req.session.todo.findIndex(cat => cat.name === req.body.type);
     // req.session.todo[index].reminders.push(newReminder);
     
