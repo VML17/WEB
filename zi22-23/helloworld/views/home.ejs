@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDos</title>
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+    <h1>Add todo...</h1>
+    <form action="/add" method="post">
+        <select name="type" id="type-select">
+            <option value="Work" class="option-work">Work</option>
+            <option value="Movies and books" class="option-work">Movies and books</option>
+            <option value="Fun" class="option-work">Fun</option>
+            <option value="Sports" class="option-work">Sports</option>
+        </select>
+        <input type="text" name="textInput" id="input">
+        <input type="submit" id="submit-btn" value="Add todo">
+    </form>
+    <hr>
+    <h1>My todos:</h1>
+    <div class="container">
+        <% for (let category of categories) {%>
+            <div class="todo-category">
+                <div class="title">
+                    <h2> <%= category.name %> (<%= category.quantity %>)</h2>
+                </div>
+                <div class="reminder-holder">
+                    <ol>
+                        <% let index = 1 %>
+                        <% for (let reminder of category.reminders) {%>
+                            <li class="reminder">
+                                <div>
+                                    <p><%= index %>.</p>
+                                    <p><%= reminder.msg %></p>
+                                </div>
+                                <div>
+                                    <p><%= reminder.date %></p>
+                                    <button class="delBtn" cat="<%= category.name %>" i="<%= index %>">X</button>
+                                </div>
+                            </li>
+                            <% index++ %>
+                            <% } %>
+                    </ol>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+    <footer>
+        <hr>
+        My todos count: <%= sessionQuantity %>, total todos count: <%= totalQuantity %>
+    </footer>
+
+    <script defer src="/scripts/btnJs.js"></script>
+</body>
+</html>

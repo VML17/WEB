@@ -1,0 +1,38 @@
+#submit-btn, #input, #type-select {
+    font-size: 1.5rem;
+}
+.container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 50px;
+    padding: 25px;
+}
+
+.todo-category {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.todo-category > .title {
+    display: flex;
+    margin-top: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: lightgray;
+    justify-content: center;
+}
+.reminder{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 786px) {
+    .container{
+        grid-template-columns: auto;
+    }
+}
