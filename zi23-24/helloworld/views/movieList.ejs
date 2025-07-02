@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="holder">
+            <h1>Movie List</h1>
+            <a href="/movies/add">
+                <button>Add movie</button>
+            </a>
+            <div>
+                <ul>
+                    <% let i = 0 %>
+                    <% for(let movie of movies) {%>
+                        <li>
+                            <p><%= movie.name %> directed by <%= movie.director %></p>
+                            <button class="delete-button" index="<%= i %>">Delete</button>
+                        </li>
+                        <% i++ %>
+                    <% } %>
+                </ul>
+            </div>
+            <a href="/">
+                <button>home</button>
+            </a>
+        </div>
+    </div>
+    <script defer src="/scripts/movieList.js"></script>
+</body>
+</html>

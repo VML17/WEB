@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add movie</title>
+
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="holder">
+            <h1>Add Movie</h1>
+            
+            <form action="/movies/add" method="post">
+                <div>
+                    <label for="title">Movie title:</label><br>
+                    <input type="text" name="title">
+                </div>
+                <div>
+                    <label for="director">Director:</label><br>
+                    <input type="text" name="director">
+                </div>
+                <input type="submit" value="Add movie">
+            </form>
+
+            <a href="/movies">
+                <button>Back to movies</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
