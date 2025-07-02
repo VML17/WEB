@@ -1,0 +1,51 @@
+/* stil brojača i timera: */
+#score, #scoreHolder{
+    color: #27ae60;
+    font-size: 3rem;
+}
+#timer, #timerHolder {
+    color: #c0392b;
+    font-size: 3rem;
+}
+#settings{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+
+/* izgled jedne kartice: */
+#container{
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(4, 200px);
+    gap: 10px;
+    justify-content: center;
+
+}
+.tile {
+    width: 200px;
+    height: 200px;
+    /* position: relative; */
+    cursor: pointer;
+    background-color: burlywood;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    align-content: center;
+    font-size: 3em;
+    /* color: transparent; */
+}
+/* ovime možemo onemogućiti klikanje na uparene kartice: */
+.matched {
+    pointer-events: none;
+    background-color: rgb(0, 128, 0, 0.3);
+}
+
+.hidden {
+    display: none;
+}
+
+.gameOver{
+    pointer-events: none;
+}

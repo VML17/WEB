@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.category{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    border: 1px solid black;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.category img {
+    width: 200px;
+}
+
+.category a {
+    text-decoration: none;
+}
+.category a button {
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+}

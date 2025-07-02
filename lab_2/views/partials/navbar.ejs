@@ -1,0 +1,11 @@
+<ul>
+    <% for (let cat of categories) { %>
+        <li>
+            <a href="/home/getProducts/<%= cat.categoryId %>">
+                <button class="btn-category<%= String(cat.categoryId) === String(activeCat) ? ' active' : '' %>" category="<%= cat.categoryId %>">
+                    <%= cat.name %>
+                </button>
+            </a>
+        </li>
+    <% } %>
+</ul>

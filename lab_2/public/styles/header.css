@@ -1,0 +1,91 @@
+.header{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "logo current-category search_login_basket";
+    background-color: rgba(130, 190, 242, 0.792);
+    padding: 1em;
+    border: 3px solid rgb(139, 174, 205);
+    border-radius: 10px;
+    gap: 0;
+
+}
+.header .logo img{
+    width: 100px;;
+    justify-self: left;
+}
+
+.header .logo{
+    grid-area: logo;
+}
+
+.search_login_basket{
+    grid-area: search_login_basket;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    justify-self: right;
+}
+
+.search_login_basket .basket a{
+    text-decoration: none;
+    color: black;
+}
+
+.search_login_basket .basket{
+    position: relative;
+
+}
+.search_login_basket .basket p {
+    position: absolute;
+    top: 0.5em;
+    right: 0;
+    background: rgb(250, 77, 77);
+    color: white;
+    font-size: 0.9rem;
+    padding: 0.2em 0.5em;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.search_login_basket svg{
+    height: 40px;
+    padding: 0 0.2em;
+    color: white;
+}
+
+
+.header .current-category{
+    grid-area: current-category;
+    align-content: end;
+    justify-self: center;
+}
+.header .current-category p{
+    font-size: 2rem;
+    color: white;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .header{
+        grid-template-columns: auto auto;
+        grid-template-areas: 'logo logo'
+                             'current-category search_login_basket';
+        gap: 0.5em;
+    }
+    .header .current-category{
+        justify-self: left;
+    }
+}
+
+
+.hidden{
+    visibility: hidden;
+}
+
+#cart-open:hover {
+    cursor: pointer;
+}

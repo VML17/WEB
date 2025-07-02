@@ -1,0 +1,19 @@
+.site-container{
+    display: grid;
+    grid-template-columns: 250px 5fr;
+
+    grid-template-areas:'header header'
+                        'aside hero'
+                        'aside content';
+    gap: 1em;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .site-container{
+        grid-template-columns: 200px 1fr;
+        grid-template-areas:'header header'
+                            'hero hero'
+                            'aside content';
+    }
+}

@@ -31,12 +31,12 @@
                         <% let index = 1 %>
                         <% for (let reminder of category.reminders) {%>
                             <li class="reminder">
-                                <div>
+                                <div class="indexMsg">
                                     <p><%= index %>.</p>
                                     <p><%= reminder.msg %></p>
                                 </div>
-                                <div>
-                                    <p><%= reminder.date %></p>
+                                <div class="dateX"> 
+                                    <p id="date"><%= reminder.date %></p>
                                     <button class="delBtn" cat="<%= category.name %>" i="<%= index %>">X</button>
                                 </div>
                             </li>

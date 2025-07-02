@@ -1,0 +1,100 @@
+.item-container .item{
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.item-container .item img{
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid black;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.item-container .item > h1{
+    font-size: 1.3rem;
+    height: 4rem;
+    overflow: visible;
+    text-align: center;
+    align-content: center;
+}
+.item-container .item > p{
+    margin: 0.1em;
+    font-size: 1.1rem;
+}
+
+.item-container .item .img-holder{
+    position: relative;
+    text-align: center;
+    width: 90%;
+}
+.item-container .item .btn-add{
+    visibility: hidden;
+    background-color: transparent;
+    border: none;
+    width: 30%;
+    height: 30%;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 75px;
+    max-height: 75px;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translatex(-50%);
+    cursor: default;
+}
+.item-container .item .btn-add svg:active{
+    color: rgb(255, 255, 255);
+}
+
+.item-container .item .btn-add svg{
+    width: 100%;
+    height: 100%;
+    color: rgba(224, 224, 224, 0.888);
+}
+
+
+  
+.item-container .item .btn-add svg path {
+    fill: currentColor;  
+    stroke: rgba(123, 193, 255, 0.888);
+    stroke-width: 35px;     
+}
+
+.item-container .item .img-holder p{
+    position: absolute;
+    bottom: 0.4em;
+    right: 0.1em;
+    background: rgb(250, 77, 77);
+    color: white;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    padding: 0.2em 0.5em;
+    border-radius: 50%;;
+    margin: 0;
+}
+
+.btn-add svg:hover {
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(1.2); 
+
+}
+
+.item-container .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.3); 
+    
+}
+.item-container .item:hover .btn-add{
+    visibility: visible;
+}
+
+.hidden{
+    visibility: hidden;
+}

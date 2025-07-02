@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/cart.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title><%= title %></title>
+</head>
+<body>
+    <div class="cart-container">
+        <%- include('partials/header', {naslov: 'Košarica', totalCount: totalCount}) %>
+
+        <div>
+            <div class="cart-items">
+                <% if (cartItems.length == 0) {%>
+                    <h2>Košarica je prazna</h2>
+                <% } else { %>
+                    <% cartItems.forEach(itm => { %>
+                        <div class="cart-item">
+                            <div class="cart-img-name">
+                                <img src="/<%= itm.image %>" alt="slika proizvoda <%= itm.name %>">
+                                <h1><%= itm.name %></h1>
+                            </div>
+                            <div class="price-details">
+                                <div class="quantity">
+                                    <button id="btnminus" class="btn-quantity" data-id="<%= itm.id %>">-</button>
+                                    <p id="item-quantity" data-id="<%= itm.id %>"><%= itm.quantity %></p>
+                                    <button id="btnplus" class="btn-quantity" data-id="<%= itm.id %>">+</button>
+                                </div>
+                                <div>
+                                    <p>Cijena:</p>
+                                    <p><%= itm.price %>€</p>
+                                </div>
+                            
+                                <div class="total-price">
+                                    <p>Ukupno:</p>
+                                    <p><%= (+itm.price * +itm.quantity).toFixed(2) %>€</p>
+                                </div>
+                            </div>
+                        </div> 
+                        
+                    <% }) %>
+                <% } %>
+            </div>
+                        
+        </div>
+
+        <%- include('partials/footer') %>
+    </div>
+    <script defer src="/scripts/cart.js"></script>
+</body>
+</html>

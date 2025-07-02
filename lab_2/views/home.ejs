@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/item.css">
+    <link rel="stylesheet" href="/styles/aside.css">
+    <link rel="stylesheet" href="/styles/item-container.css">
+    <link rel="stylesheet" href="/styles/hero.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <div class="site-container">
+        <%- include('partials/header', {naslov: 'Početna', totalCount: totalCount}) %>
+        
+        <div class="aside">
+            <div>
+                <nav class="navbar">
+                    <%- include('partials/navbar', {categories : categories, activeCat : null}) %>
+                </nav>
+            </div>
+            
+            <div class="aside-content">
+                <p>Kontakt</p>
+                <p>Newsletter</p>
+                <p>Pretplati se</p>
+            </div>
+        </div>
+
+        <div class="hero">
+            <img src="/images/hero1.jpg" alt="">
+            <h1>Dobrodošli u Guitar Empire</h1>
+        </div>
+
+        <%- include('partials/footer') %>
+    </div>
+
+</body>
+</html>

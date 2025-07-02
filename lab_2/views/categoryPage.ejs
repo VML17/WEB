@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/item.css">
+    <link rel="stylesheet" href="/styles/aside.css">
+    <link rel="stylesheet" href="/styles/item-container.css">
+    <link rel="stylesheet" href="/styles/hero.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <title>Shop | <%= title %></title>
+</head>
+<body>
+    <div class="site-container">
+        <%- include('partials/header', {naslov: title, totalCount: totalCount}) %>
+        
+        <div class="aside">
+            <div>
+                <nav class="navbar">
+                    <%- include('partials/navbar', {categories : categories, activeCat : activeCat}) %>
+                </nav>
+            </div>
+            
+            <div class="aside-content">
+                <p>Kontakt</p>
+                <p>Newsletter</p>
+                <p>Pretplati se</p>
+            </div>
+        </div>
+
+        <div class="hero">
+            <img src="/images/hero1.jpg" alt="">
+            <h1>Dobrodošli u Guitar Empire</h1>
+        </div>
+
+        <div class="outer-container">
+            <div class="item-container">
+                <% for (let product of products) {%>
+                    <div id="<%= product.id %>" class="item" category="<%= products.name %>">
+                        <div class="img-holder">
+                            <img src="/<%= product.image %>" alt="proizvod <%= product.id %> iz kategorije <%= products.name %>">
+                            <button class="btn-add hidden" data-id="<%= product.id %>">
+                                <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor">
+                                    <path class="icon" d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                                </svg>
+                            </button>
+                            
+                            <p class="product-counter<%= (cart.find(item => String(item.id) === String(product.id)) && cart.find(item => String(item.id) === String(product.id)).quantity > 0) ? '' : ' hidden' %>" data-id="<%= product.id %>">
+                                <%= (cart.find(item => String(item.id) === String(product.id)) || {quantity: 0}).quantity %>
+                            </p>
+                        </div>
+                        <h1><%= product.name %></h1>
+                        <p><%= product.price %> €</p>
+                    </div>     
+                <% } %>
+
+            </div>
+        </div>
+        <%- include('partials/footer') %>
+    </div>
+
+
+    <script defer src="/scripts/categoryPage.js"></script>
+</body>
+</html>

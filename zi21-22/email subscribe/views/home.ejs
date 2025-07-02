@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <% for (let category of categories) { %>
+            <div class="category">
+                <h1><%= category.name %> (<%= category.quantity %>)</h1>
+                <img src="/images/<%= category.img %>" alt="img for <%= category.name %>">
+                <a href="/subscribe/<%= category.name %>"><button>Subscribe</button></a>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
