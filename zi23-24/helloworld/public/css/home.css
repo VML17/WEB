@@ -68,7 +68,7 @@ li{
     margin: 10px 0px;
 }
 
-form {
+form.add-form {
     display: flex;
     flex-direction: column;
     gap: 10px;

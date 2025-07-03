@@ -19,7 +19,10 @@
                     <% for(let movie of movies) {%>
                         <li>
                             <p><%= movie.name %> directed by <%= movie.director %></p>
-                            <button class="delete-button" index="<%= i %>">Delete</button>
+                            <!-- <button class="delete-button" index="<%= i %>">Delete</button> -->
+                             <form action="/movies/delete/<%= i %>" method="post" class="delete-form">
+                                <button class="delete-button">Delete</button>
+                             </form>
                         </li>
                         <% i++ %>
                     <% } %>
@@ -30,6 +33,6 @@
             </a>
         </div>
     </div>
-    <script defer src="/scripts/movieList.js"></script>
+    <!-- <script defer src="/scripts/movieList.js"></script> -->
 </body>
 </html>

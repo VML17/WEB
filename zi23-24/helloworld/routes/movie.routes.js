@@ -1,5 +1,4 @@
 const express = require("express");
-const { route } = require("./home.routes");
 const router = express.Router();
 
 let movieRepo = [{name: "Inception", director: "Christopher Nolan"}];
@@ -29,7 +28,8 @@ router.post("/delete/:id", (req, res) => {
     const id = req.params.id;
     if (movieRepo.length > id){
         movieRepo.splice(id, 1);
-        res.status(200).redirect("/movies");
+        res.redirect("/movies");
+        // res.status(200).redirect("/movies");
     }else{
         res.status(404).json({msg:"No movie with that id"});
     }
