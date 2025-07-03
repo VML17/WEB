@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1</title>
+    <link rel="stylesheet" href="/css/site.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Koliko poznaješ legendarne svjetove?</h1>
+            <div class="progress">
+                Pitanje <%= question.id %> of 6
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="question-card">
+                <div class="category-badge">
+                    <%= question.category %>
+                </div>
+                <h2 class="question-title">
+                    <%= question.question %>
+                </h2>
+
+                <form action="/quiz/question/<%= question.id %>/answer" method="post">
+                    <div class="options">
+                        <% let i = 0 %>
+                        <% for (let option of question.options) { %>
+                        <label class="option">
+                                <input type="radio" name="answer" value="<%= i %>" required>
+                                <span class="option-text">
+                                    <%= option %>
+                                </span>
+                            </label>
+                            <% i++ %>
+                        <% } %>
+                    </div>
+                    <input type="submit" value="Sljedeće pitanje" class="submit-btn">
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

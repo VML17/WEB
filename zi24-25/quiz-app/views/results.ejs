@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+     <link rel="stylesheet" href="/css/site.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Kviz uspješno završen!</h1>
+        </div>
+
+        <div class="main">
+            <div class="results-card">
+                <h2>Koliko poznaješ legendarne svjetove?</h2>
+                
+                <div class="score-display">
+                     <div class="score-text">
+						<%= correct %>/6 točnih odgovora (<%= perc %>%)
+                    </div>
+                </div>
+
+
+                <div class="actions">
+                    <a href="/"><div class="btn-secondary">Natrag na početnu</div></a>
+                    <div style="display: inline;">
+                        <a href="/quiz/start"><div class="btn-primary">Pokušaj ponovno</div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

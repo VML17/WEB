@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    min-width: 400px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: #4267B2;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.progress {
+    background: rgba(255,255,255,0.2);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.quiz-card, .question-card, .results-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.quiz-card h2, .results-card h2 {
+    color: #4267B2;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.quiz-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.info-item {
+    display: inline-block;
+    margin: 0 20px;
+    font-weight: bold;
+    color: #4267B2;
+}
+
+.start-btn, .submit-btn, .btn-primary {
+    background: #4267B2;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.start-btn:hover, .submit-btn:hover, .btn-primary:hover {
+    background: #365899;
+}
+
+.btn-secondary {
+    background: #42b883;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.question-title {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.options {
+    margin-bottom: 25px;
+}
+
+.option {
+    display: block;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.option:hover {
+    border-color: #4267B2;
+    background: #f0f2f5;
+}
+
+.option input {
+    margin-right: 10px;
+}
+
+.score-display {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.score-circle {
+    margin-bottom: 15px;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.actions > * {
+    margin: 10px 10px;
+}
+
+.score-text {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+	font-weight: bold;
+    color: #333;
+}
